@@ -1,3 +1,4 @@
+
 # include<stdio.h>
 # include<stdlib.h>
 struct stack {
@@ -47,14 +48,14 @@ int pop(struct stack *ptr){//we dont use void to return the removed value
     }
         
     }
-int peek(struct stack *ptr,int i){//helps to tell the position of stack
+int peek(struct stack *ptr,int i){//helps to tell the position of element in the stack
     if(ptr->top-i+1<0){
             printf("operation is invalid");
             return -1;
         }
     else{
-            return ptr->arr[ptr->top-i+1];
-            
+            ptr->arr[ptr->top-i+1];
+            return 0;
         }
     }
 
@@ -83,8 +84,7 @@ printf("%d\n",isfull(s));
 
 printf("%d ha been removed from the stack",pop(s));
 for(j=0;j<=s->size;j++){
-    printf("\nthe valie of %d stack is %d",j,peek(s,j));
+    printf("\nthe valie of %d stack is %d",j,peek(s,j));//it will give value in last in first out(LIFO)
 }
 return 0;
 }
-    
